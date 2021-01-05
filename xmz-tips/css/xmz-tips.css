@@ -1,0 +1,53 @@
+.tool_tip {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 13px;
+    position: absolute;
+    z-index: 99999;
+    width: auto;
+    height: auto;
+    word-wrap: break-word
+}
+
+.tool_tip:before {
+    position: absolute;
+    content: '';
+    background-color: rgba(0,0,0,0);
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-style: solid
+}
+
+.tool_tip_top:before {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+}
+
+.tool_tip_right:before {
+    top: 50%;
+    left: 0;
+    transform: translate(-100%,-50%);
+    -ms-transform: translate(-100%,-50%);
+    -webkit-transform: translate(-100%,-50%);
+}
+
+.tool_tip_bottom:before {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    -ms-transform: translate(-50%,-100%);
+    -webkit-transform: translate(-50%,-100%);
+}
+
+.tool_tip_left:before {
+    top: 50%;
+    left: 100%;
+    transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+}
