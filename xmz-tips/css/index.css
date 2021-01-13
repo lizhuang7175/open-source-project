@@ -1,17 +1,45 @@
 .title {
     text-align: center;
+    margin-top: 20px;
 }
 
 .content {
     margin: 20px;
+    text-align: center;
 }
 
-.autoDemos, .methodDemos, .simpleExamples {
-    margin: 10px 20px;
+.autoDemos, .simpleExamples {
+    margin-top: 60px;
 }
 
 .autoDemoItem, .methodDemoItem, .simpleExampleItem {
     display: inline-block;
-    width: 300px;
-    margin-left: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.simpleExampleItem div {
+    display: inline-block;
+}
+
+.btn {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #0082ff;
+    border-radius: 5px;
+}
+
+.btn-pass {
+    background-color: #00a28b;
+}
+
+.btn-warning {
+    background-color: #d3bf00;
+}
+
+.btn-danger {
+    background-color: #d73b00;
 }

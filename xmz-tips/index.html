@@ -10,10 +10,12 @@
         $(document).ready(function () {
             xmzTips({
                 elem: '#methodDemo1'
-                ,content: '使用构造方式，elem（css选择器）和content（展示内容）是必填项'
+                ,content: '通过js方法构造：这种方式下，elem（css选择器）和content（展示内容）是必填项'
+                ,width: 200
+                ,direction: 'left'
             });
 
-            let methodDemo2Content = '这个demo会使用全部属性：' +
+            let methodDemo2Content = '通过js方法构造，这个demo会使用全部属性：' +
                 '<br/>&nbsp;&nbsp;&nbsp;&nbsp; elem：必填项，要设置tip弹窗元素的css选择器' +
                 '<br/>&nbsp;&nbsp;&nbsp;&nbsp; content：必填项，要展示的内容' +
                 '<br/>&nbsp;&nbsp;&nbsp;&nbsp; direction：提示窗的方向（left、right、top、bottom）' +
@@ -39,55 +41,52 @@
 </head>
 <body>
 <div class="title">
-    <h3>
+    <h2>
         Welcome
-    </h3>
+    </h2>
 </div>
 <div class="content">
     <div class="simpleDemos">
         <div class="autoDemos">
-            <h4>
-                通过属性加载的简单demo
-            </h4>
             <div class="autoDemoItem">
-                <a href="javascript:void(0)" class="xmz-tips" xt="加上xmz-tips类名，这个测试及其简单，只使用了一个xt属性">使用属性自动加载的Demo1</a>
+                <div class="xmz-tips btn"
+                   xt="通过类名加载的tips：加上xmz-tips类名即可。
+                   <br/>这个demo及其简单，只使用了一个xt属性，
+                   <br/>因为当使用类名加载的时候，xt是唯一一个必填项">
+                    demo1
+                </div>
             </div>
             <div class="autoDemoItem">
-                <a href="javascript:void(0)" class="xmz-tips"
-                   xt="使用了全部属性的，自动加载的tip;
+                <div class="xmz-tips btn btn-pass"
+                   xt="通过类名加载的tips，这个demo用了所有的属性：
                    <br/>1. xt: （必填项）要展示的内容；
                    <br/>2. xt-width: 提示窗的宽度（只需要填写数值，js逻辑会在后面拼接px）；
                    <br/>3. xt-color: 提示窗的颜色；
                    <br/>4. xt-font-color: 提示窗文字的颜色；
                    <br/>5. xt-direction: 提示窗的方向（left、right、top、bottom）；"
-                   xt-width="300"
+                   xt-width="450"
                    xt-color="#00d2ff"
                    xt-font-color="#636363"
                    xt-direction="bottom">
-                    使用属性自动加载的Demo2
-                </a>
+                    demo2
+                </div>
             </div>
-        </div>
 
-        <div class="methodDemos">
-            <h4>
-                通过调用构造方法加载的简单demo
-            </h4>
             <div class="methodDemoItem">
-                <a href="javascript:void(0)" id="methodDemo1">js构造方法创建tips的Demo1</a>
+                <div class="btn btn-warning" id="methodDemo1">demo3</div>
             </div>
             <div class="methodDemoItem">
-                <a href="javascript:void(0)" class="methodDemo2">js构造方法创建tips的Demo2</a>
+                <div class="btn btn-danger methodDemo2">demo4</div>
             </div>
         </div>
     </div>
 
     <div class="simpleExamples">
         <h4>
-            一些实际使用场景
+            伪造的一些实用场景
         </h4>
         <div class="simpleExampleItem">
-            <a href="javascript:void(0)">操作提示</a>
+            <div class="btn">操作提示</div>
             <span class="xmz-tips"
                   xt="这里可以放个你自己的icon图标，写一些操作提示"
                   xt-width="150"
