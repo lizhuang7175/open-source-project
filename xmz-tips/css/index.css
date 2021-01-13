@@ -1,6 +1,17 @@
 .title {
     text-align: center;
 }
-.auto {
-    margin-left: 100px;
+
+.content {
+    margin: 20px;
+}
+
+.autoDemos, .methodDemos, .simpleExamples {
+    margin: 10px 20px;
+}
+
+.autoDemoItem, .methodDemoItem, .simpleExampleItem {
+    display: inline-block;
+    width: 300px;
+    margin-left: 20px;
 }

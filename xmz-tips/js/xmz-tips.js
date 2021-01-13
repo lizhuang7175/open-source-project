@@ -6,13 +6,13 @@
         tipFontColor: '#ffffff'
     };
     let xmzTips = {
-        initTips: function(el, xmzTipId, tipConfig) {
+        initTips: function (el, xmzTipId, tipConfig) {
             let tipContent = document.createElement("div"),
                 commonBackColor = tipConfig.tipColor ? tipConfig.tipColor : defaultProperty.tipColor;   //背景颜色
             tipConfig = tipConfig || {};
             //一些非必填属性,如果未设置则赋值默认值
             tipConfig.direction = tipConfig.direction || defaultProperty.direction; //方向
-            if (tipConfig.width && typeof tipConfig.width === 'number') {   //给提示框设置宽度
+            if (tipConfig.width) {   //给提示框设置宽度
                 tipContent.style.width = tipConfig.width + "px";
             }
             tipContent.style.color = tipConfig.tipFontColor ? tipConfig.tipFontColor : defaultProperty.tipFontColor;    //文字颜色
@@ -26,16 +26,16 @@
             switch (tipConfig.direction) {
                 case "top":
                     //小三角样式（css伪类）
-                    beforeCssCode = "[xmz-tip-id=" + xmzTipId +"]:before {border-color: " + commonBackColor + " transparent transparent transparent}";
+                    beforeCssCode = "[xmz-tip-id=" + xmzTipId + "]:before {border-color: " + commonBackColor + " transparent transparent transparent}";
                     break;
                 case "right":
-                    beforeCssCode = "[xmz-tip-id=" + xmzTipId +"]:before {border-color: transparent " + commonBackColor + " transparent transparent}";
+                    beforeCssCode = "[xmz-tip-id=" + xmzTipId + "]:before {border-color: transparent " + commonBackColor + " transparent transparent}";
                     break;
                 case "bottom":
-                    beforeCssCode = "[xmz-tip-id=" + xmzTipId +"]:before {border-color: transparent transparent " + commonBackColor + " transparent}";
+                    beforeCssCode = "[xmz-tip-id=" + xmzTipId + "]:before {border-color: transparent transparent " + commonBackColor + " transparent}";
                     break;
                 case "left":
-                    beforeCssCode = "[xmz-tip-id=" + xmzTipId +"]:before {border-color: transparent transparent transparent " + commonBackColor + "}";
+                    beforeCssCode = "[xmz-tip-id=" + xmzTipId + "]:before {border-color: transparent transparent transparent " + commonBackColor + "}";
             }
 
             styleEle.appendChild(document.createTextNode(beforeCssCode));
@@ -90,7 +90,7 @@
         }
     };
 
-    jQuery(function(){
+    jQuery(function () {
         //通过属性直接加载tips的元素
         let autoClassName = '.xmz-tips';
         let autoSelectors = document.querySelectorAll(autoClassName);
@@ -98,7 +98,7 @@
             Array.prototype.slice.call(autoSelectors).forEach(function (el, index) {
                 //创建tip弹窗的唯一标识
                 let xmzTipId = "xmz-tips-" + index,
-                config = {};
+                    config = {};
                 config.content = el.getAttribute("xt");
                 config.width = el.getAttribute("xt-width");
                 config.tipColor = el.getAttribute("xt-color");
@@ -111,7 +111,7 @@
     });
 
     //通过构造方法生成tips
-    window.xmzTips = function (property){
+    window.xmzTips = function (property) {
         let selector = property.elem;
         if (selector) {
             let els = document.querySelectorAll(selector);
@@ -125,7 +125,7 @@
                 Array.prototype.slice.call(els).forEach(function (el, index) {
                     //创建tip弹窗的唯一标识
                     let selectorValue = selector.substring(1),
-                    xmzTipId = selectorValue + "-tips-" + index;
+                        xmzTipId = selectorValue + "-tips-" + index;
                     //初始化tip弹窗
                     xmzTips.initTips(el, xmzTipId, config);
                 });
